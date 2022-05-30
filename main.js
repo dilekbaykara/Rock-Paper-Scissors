@@ -15,12 +15,12 @@ let computerWins = "You lost the game!";
 var rock = document.getElementById("rockBtn")
 var paper = document.getElementById("paperBtn")
 var scissors = document.getElementById("scissorsBtn")
+const playerSign = document.getElementById('playerSign')
+const computerSign = document.getElementById('computerSign')
 
 //Button Click Event Listener//
 
-rock.addEventListener('click', function() {
-  console.log('this is working');
-});
+rock.addEventListener('click', buttonClick());
 
 paper.addEventListener('click', function() {
     console.log('the js is working');
@@ -29,6 +29,14 @@ paper.addEventListener('click', function() {
 scissors.addEventListener('click', function() {
     console.log('this js is working');
 });
+
+//Button Click//
+function buttonClick(){
+ playerSign.getElementsByClassName('?')[0]
+  playerSign.innerHTML = '<img src="./images/Rock.png" alt="Rock"/>'
+
+}
+
 
 //Play Round//
 function playRound(playerSelection, computerSelection) {
@@ -52,3 +60,19 @@ function playRound(playerSelection, computerSelection) {
       computerScore++;
   }
 
+  function isGameOver() {
+    return playerScore === 5 || computerScore === 5
+  }
+
+  function updateScore() {
+    if (roundWinner === 'tie') {
+      scoreInfo.textContent = "It's a tie!"
+    } else if (roundWinner === 'player') {
+      scoreInfo.textContent = 'You won!'
+    } else if (roundWinner === 'computer') {
+      scoreInfo.textContent = 'You lost!'
+    }
+  
+    playerScorePara.textContent = `Player: ${playerScore}`
+    computerScorePara.textContent = `Computer: ${computerScore}`
+  }
