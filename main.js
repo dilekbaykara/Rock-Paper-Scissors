@@ -20,22 +20,20 @@ const computerSign = document.getElementById('computerSign')
 
 //Button Click Event Listener//
 
-rock.addEventListener('click', buttonClick());
+rock.addEventListener('click', function() {
+  playerSign.getElementsByClassName('?')[0]
+  playerSign.innerHTML = '<img src="./images/Rock.png" alt="Rock"/>'
+});
 
 paper.addEventListener('click', function() {
-    console.log('the js is working');
+  playerSign.getElementsByClassName('?')[0]
+  playerSign.innerHTML = '<img src="./images/Paper.png" alt="Paper"/>'
 });
 
 scissors.addEventListener('click', function() {
-    console.log('this js is working');
+  playerSign.getElementsByClassName('?')[0]
+  playerSign.innerHTML = '<img src="./images/Scissors.png" alt="Scissors"/>'
 });
-
-//Button Click//
-function buttonClick(){
- playerSign.getElementsByClassName('?')[0]
-  playerSign.innerHTML = '<img src="./images/Rock.png" alt="Rock"/>'
-
-}
 
 
 //Play Round//
@@ -72,7 +70,25 @@ function playRound(playerSelection, computerSelection) {
     } else if (roundWinner === 'computer') {
       scoreInfo.textContent = 'You lost!'
     }
-  
+
+function getRandomChoice() {
+  let randomNumber = Math.floor(Math.random() * 3)
+  switch (randomNumber) {
+    case 0:
+      return 'rock'
+    case 1:
+      return 'paper'
+    case 2:
+      return 'scissors'
+  }
+}
+
+const computerSelection = getRandomChoice()
+playRound(playerSelection, computerSelection)
+updateChoices(playerSelection, computerSelection)
+updateScore()
+
+
     playerScorePara.textContent = `Player: ${playerScore}`
     computerScorePara.textContent = `Computer: ${computerScore}`
   }

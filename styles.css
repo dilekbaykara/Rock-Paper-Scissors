@@ -62,7 +62,17 @@ body {
 
 }
 
-.sign:hover {
+
+#paperBtn:hover {
+    opacity: 0.5;
+  }
+
+
+#scissorsBtn:hover {
+    opacity: 0.5;
+  }
+
+#rockBtn:hover {
     opacity: 0.5;
   }
 
