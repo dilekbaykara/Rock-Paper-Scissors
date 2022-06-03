@@ -107,8 +107,8 @@ function isGameOver() {
 }
 
 function openEndgameModal() {
-  modal.classList.add('active');
-  overlay.classList.add('active');
+  modal.classList.add('modal-content');
+
 }
 
 //Restart Game Function//
