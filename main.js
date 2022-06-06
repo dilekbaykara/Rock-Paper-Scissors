@@ -19,6 +19,7 @@ const playerSign = document.getElementById("playerSign");
 const scoreMessage = document.getElementById("scoreMessage");
 const pScore = document.getElementById("playerScore");
 const cScore = document.getElementById("computerScore");
+var spanObject = document.getElementsByClassName("close")[0];
 
 rock.addEventListener('click', function() {
   playerSign.innerHTML = '<img src="./images/Rock.png" alt="Rock"/>';
@@ -61,8 +62,9 @@ function playRound(playerSelection, computerSelection) {
     cScore.textContent = "COMPUTER:" + cScore.dataset.score;
     roundWinner = 'computer';
   }
-  if (pScore.dataset.score === 5 || cScore.dataset.score === 5) {
-openEndgameModal();
+  if (parseInt(pScore.dataset.score) === 5 || parseInt(cScore.dataset.score) === 5) {
+  showModal();
+
   }
   console.log("Computer: " + computerSelection + ", Player: " + playerSelection + ", Winner: " + roundWinner + ".");
   updateScoreMessage(roundWinner, playerSelection, computerSelection);
@@ -102,17 +104,10 @@ function updateScoreMessage(winner, playerSelection, computerSelection) {
   scoreMessage.textContent = 'Your selection: ' + flCapital(playerSelection) + ' ties with ' + flCapital(computerSelection) + '!';
 }
 
-function isGameOver() {
-  return pScore === 5 || cScore === 5;
-}
 
-function openEndgameModal() {
-  modal.classList.add('modal-content');
-
-}
 
 //Restart Game Function//
-function restartGame() {
+/*function restartGame() {
 pScore = 0;
 cScore = 0;
 scoreMessage.textContent = 'FIRST TO SCORE 5 POINTS WINS THE GAME';
@@ -120,8 +115,19 @@ pScore.dataset.score = '0';
 cScore.dataset.score = '0';
 playerSign.innerHTML = '❔';
 computerSign.innerHTML = '❔';
-}
+} */
 
+//Modal Function//
+function showModal() {
+  ///Get the modal
+  document.getElementById('myModal').style.display = "block";
+  var spanObject = document.getElementsByClassName("close")[0];
+  spanObject.onclick = function() {
+    document.getElementById('myModal').style.display = "none";
+  }
+  }
+
+//GitHub icon//
 function flCapital(str) {
   if (!str) return;
   return str.match("^[a-z]") ? str.charAt(0).toUpperCase() + str.substring(1) : str;
