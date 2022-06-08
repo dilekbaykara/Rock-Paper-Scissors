@@ -1,7 +1,7 @@
 
 //Score Start//
-let playerScore = 0;
-let computerScore = 0;
+var playerScore = 0;
+var computerScore = 0;
 let roundWinner = '';
 
 //Win Lose Messages//
@@ -20,6 +20,7 @@ const scoreMessage = document.getElementById("scoreMessage");
 const pScore = document.getElementById("playerScore");
 const cScore = document.getElementById("computerScore");
 var spanObject = document.getElementsByClassName("close")[0];
+const resetGame = document.getElementById("newGame");
 
 rock.addEventListener('click', function() {
   playerSign.innerHTML = '<img src="./images/Rock.png" alt="Rock"/>';
@@ -35,6 +36,12 @@ scissors.addEventListener('click', function() {
   playerSign.innerHTML = '<img src="./images/Scissors.png" alt="Scissors"/>';
   playRound('scissors', getRandomChoice());
 });
+
+//Restart Game Button//
+resetGame.addEventListener('click', function(){
+beginNewGame(playerScore,computerScore);
+});
+
 
 //Play round function//
 
@@ -107,15 +114,19 @@ function updateScoreMessage(winner, playerSelection, computerSelection) {
 
 
 //Restart Game Function//
-/*function restartGame() {
-pScore = 0;
-cScore = 0;
+function beginNewGame(playerScore,computerScore) {
+pScore.dataset.score = 0;
+cScore.dataset.score = 0;
+roundWinner = '';
 scoreMessage.textContent = 'FIRST TO SCORE 5 POINTS WINS THE GAME';
-pScore.dataset.score = '0';
-cScore.dataset.score = '0';
+pScore.innerHTML = 'PLAYER:' + pScore.dataset.score;
+cScore.innerHTML = 'COMPUTER:' + cScore.dataset.score;
+
+//computerScore = parseInt(cScore.dataset.score) = 0;
+//playerScore = parseInt(pScore.dataset.score) = 0;
 playerSign.innerHTML = '❔';
 computerSign.innerHTML = '❔';
-} */
+} 
 
 //Modal Function//
 function showModal() {
