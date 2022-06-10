@@ -10,6 +10,7 @@
  let playerWins = "You won the game!";
  let computerWins = "You lost the game!";
  
+ 
  //Define Buttons//
  const rock = document.getElementById("rockBtn");
  const paper = document.getElementById("paperBtn");
