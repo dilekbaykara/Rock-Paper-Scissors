@@ -107,27 +107,6 @@ body {
     padding: 0px;
     margin: 0px;
   }
-/* FOOTER */
-
-footer {
-    font-family: input-mono,monospace;
-    font-weight: 400;
-    font-size: 15px;
-    color: #869592;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-}
-
-.fa-github {
-    color: #869592;
-    font-size: 24px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .fa-github:hover {
-    transform: rotate(360deg) scale(1.2);
-  }
 
   /* The Modal (background) */
 .modal {
@@ -145,7 +124,7 @@ footer {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #869592;
+  background-color: #b9d3ca;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
@@ -170,7 +149,7 @@ footer {
 .modal {
   display: flex-box;
   position: fixed;
-  z-index: 1;
+
   padding-top: 100px;
   left: 0;
   top: 0;
@@ -178,33 +157,31 @@ footer {
   height: 100%;
   overflow: auto;
 }
+
  /* Modal Content */
+.modal-message {
+  display: flex;
+  justify-content: center;
+  font-family: input-mono,monospace;
+  font-weight: 400;
+  font-size: 20px;
+  color: #869592;
+  text-align: center;
+  padding: 3px;
+  margin: 5px;
+  margin-bottom: 5px;
+}
+
+
  .modal-content {
    display: flex;
    flex-direction: column;
-  background-color: #869592;
+  background-color: #131816;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 60%;
   border-radius: 7px;
-}
-
-/* The Close Button */
-.close {
-color: #grey;
-float: right;
-font-size: 28px;
-font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-background-color: red;
-padding: 5px 10px;
-color: white;
-text-decoration: none;
-cursor: pointer;
 }
 
 p {
@@ -227,6 +204,31 @@ button {
   font-family: input-mono,monospace;
   font-weight: 200;
   font-size: 20px;
-  color: #aaa;
+  color: #fbff12;
+  background-color: rgb(91 113 107);
   justify-content: center;
+}
+
+/* FOOTER */
+
+footer {
+  font-family: input-mono,monospace;
+  font-weight: 400;
+  font-size: 15px;
+  color: #869592;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.fa-github {
+
+  color: #869592;
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+
+  transform: rotate(360deg) scale(1.2);
 }
